@@ -61,17 +61,34 @@ def getFullAppPath(app):
         if(app in installedApp):
             return str(installedApp)
 def backupAPK(appName):
-    print("Loading. This might take a while. Will save to the current (script) folder.")
+    print("\t[Loading] This might take a while. Will save .apk file to the current (script) folder.")
     execute("pull " + getFullAppPath(appName)[8:-len(getFullAppName(appName)[8:])-1] + " " + getFullAppName(appName)[8:] + ".apk")
-    print("[Finished] \t " + getFullAppName(appName)[8:] + ".apk")
-    print("[Done]")
+    print("\t[Finished] \t " + getFullAppName(appName)[8:] + ".apk")
+    print("\t[Done]")
 def backupAPKList(appNameList):
-    print("Loading. This might take a while. Will save to the current (script) folder.")
+    print("\t[Loading] This might take a while. Will save .apk files in the current (script) folder.")
     for appName in appNameList:
         execute("pull " + getFullAppPath(appName)[8:-len(getFullAppName(appName)[8:])-1] + " " + getFullAppName(appName)[8:] + ".apk")
-        print("[Finished] \t " + getFullAppName(appName)[8:] + ".apk")
+        print("\t[Finished] \t " + getFullAppName(appName)[8:] + ".apk")
+    print("\t[Done]")
 def backupOBB(appName):
-    execute("backup -obb -f " + appName)
+    print("\t[Loading] This might take a while. Will save OBB folder in the current (script) folder.")
+    execute("pull /storage/emulated/0/Android/obb/" + getFullAppName(appName)[8:])
+    print("\t[Finished] \t " + getFullAppName(appName)[8:])
+    print("\t[Done]")
+def backupOBBList(appNameList):
+    print("\t[Loading] This might take a while. Will save OBB folders in the current (script) folder.")
+    for appName in appNameList:
+        execute("pull /storage/emulated/0/Android/obb/" + getFullAppName(appName)[8:])
+        print("\t[Finished] \t " + getFullAppName(appName)[8:])
+    print("\t[Done]")
 def backupFullApp(appName):
+    print("\nFetching APK:")
     backupAPK(appName)
+    print("\nFetching OBB:")
     backupOBB(appName)
+def backupFullAppList(appNameList):
+    print("Fetching APK's now.")
+    backupAPKList(appNameList)
+    print("Fetching OBB's now.")
+    backupOBBList(appNameList)
