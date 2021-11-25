@@ -3,6 +3,8 @@ A wrapper script to make working with ADB (Android Debug Bridge) easier
 
 This project was just a simple test to see if I could wrap some adb stuff in Python (and even automate backups via a list of strings/apps for example).
 
+https://user-images.githubusercontent.com/45468984/143460188-768b1cc2-c832-445c-b084-aab58ecaa485.mp4
+
 I had some issues understanding the different license types, but to keep it simple: This Project is **freely licensed / public domain?** -> **You can do whatever you want** with it, no credits, no asking etc... Do what you want.
 
 Upon startup / import, you'll be asked to set the ADB Path. If you don't want that, simply set the path in the script yourself and save it / deleted the rest of the path thing at the top. I trust that you are smart enough to handle this basic first step if your goal is to modify and reuse the code. If not, simply input your desired option.
