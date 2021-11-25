@@ -23,13 +23,14 @@ The Script is kept as simple and the imports as short / low as possible (Only 1 
   - backupAPK(appName):
   - backupAPKList(appNameList):
   - backupOBB(appName):
+  - backupOBBList(appNameList):
   - backupFullApp(appName):
-  
+  - backupFullAppList(appNameList):
 ## Notes:
   - execute exists twice in case you want to use a specific device id, regular execute with auto choose       your connected android device.
-  - execute is not just used mainly in the code by other functions. It can also be used by you in order to     run a specific adb code, just in case.
-  - listApps has multiple options, default being no params => Displays/returns a list of your regular         (called third party excl. system apps) apps. If you set listPath to True, you'll receive the full         complete path (with "cryptic" letters etc..., default = False)
+  - execute is not just used mainly in the code by other functions. It can also be used by you in order  to run a specific adb code, just in case.
+  - listApps has multiple options, default being no params => Displays/returns a list of your regular (called third party excl. system apps) apps. If you set listPath to True, you'll receive the full complete path (with "cryptic" letters etc..., default = False)
   - backupAPK backups APK in the current folder where the script is being ran.
-    - DO NOTE, sometimes the functions will say something about "NoneType". This issue should be fixed           (renamed the overloaded function with list as param). Though if it does happen, it means probably         that it couldn't find an app with that name <-- Should be fixed most definitely.
-  - backupOBB doesn't work / not tested since it want's to create a full backup ? [Avoid it]
-  - backupFullApp doesn't work since OBB doesn't work. [Avoid it] 
+    - DO NOTE, sometimes the functions will say something about "NoneType". This issue should be fixed (renamed the overloaded function with list as param). Though if it does happen, it means probably that it couldn't find an app with that name.
+  - backupOBB works now (updated)
+  - backupFullApp works now (updated).
